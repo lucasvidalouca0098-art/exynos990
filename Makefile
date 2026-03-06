@@ -371,7 +371,7 @@ KBUILD_HOSTLDLIBS   := $(HOST_LFS_LIBS) $(HOSTLDLIBS)
 # Make variables (CC, etc...)
 AS		= $(CCACHE) llvm-as
 LD		= $(CCACHE) ld.lld
-CC              = $(CCACHE) /home/chanz22/tc/puppy_clang/bin/clang
+CC              = $(CCACHE) /home/runner/work/exynos990/exynos990/toolchain/clang/host/linux-x86/clang-r349610-jopp/bin/clang
 CPP		= $(CC) -E
 AR		= $(CCACHE) llvm-ar
 NM		= llvm-nm
@@ -630,8 +630,8 @@ endif
 
 # use llvm-ar for building symbol tables from IR files, and llvm-nm instead
 # of objdump for processing symbol versions and exports
-LLVM_AR		:= /home/chanz22/tc/puppy_clang/bin/llvm-ar
-LLVM_NM		:= /home/chanz22/tc/puppy_clang/bin/llvm-nm
+LLVM_AR		:= /home/runner/work/exynos990/exynos990/toolchain/clang/host/linux-x86/clang-r349610-jopp/bin/llvm-ar
+LLVM_NM		:= /home/runner/work/exynos990/exynos999/toolchain/clang/host/linux-x86/clang-r349610-jopp/bin/llvm-nm
 export LLVM_AR LLVM_NM
 
 # The arch Makefile can set ARCH_{CPP,A,C}FLAGS to override the default
