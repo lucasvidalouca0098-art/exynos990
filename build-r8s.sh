@@ -5,8 +5,8 @@ mkdir images
 mkdir builds
 export CDIR="$(pwd)"
 export LOG_FILE=puppy.log
-export OUT_DIR="/home/runner/work/exynos990/exynos99/kout"
-export AK3="/home/runner/work/exynos990/exynos99/AnyKernel3"
+export OUT_DIR="/home/runner/work/exynos990/exynos990/kout"
+export AK3="/home/runner/work/exynos990/exynos990/AnyKernel3"
 export IMAGE_NAME=PuppyKernel
 export KERNELZIP="PuppyKernel.zip"
 export KERNELVERSION=1.2
@@ -23,12 +23,12 @@ DATE_START=$(date +"%s")
 make O="$OUT_DIR" chanz_r8s_defconfig
 make O="$OUT_DIR" -j12 2>&1 | tee "../$LOG_FILE"
 
-cd /home/runner/work/exynos990/exynos99/toolchain/
+cd /home/runner/work/exynos990/exynos990/toolchain/
 
 ./mkdtimg cfg_create "$AK3"/dtb.img $(pwd)/dtconfigs/exynos9830.cfg -d "$OUT_DIR"/arch/arm64/boot/dts/exynos
 ./mkdtimg cfg_create "$AK3"/dtbo.img $(pwd)/dtconfigs/r8s.cfg -d "$OUT_DIR"/arch/arm64/boot/dts/samsung
 
-cd /home/runner/work/exynos990/exynos99/
+cd /home/runner/work/exynos990/exynos990/
 
 cp "$OUT_DIR"/arch/arm64/boot/Image "$AK3"/Image
 
